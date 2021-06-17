@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: apia
+  name: apia
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apia
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: apia
+    spec:
+      containers:
+      - image: apia:latest
+        name: apia
+        resources: {}
+        imagePullPolicy: Never
+        env:
+        - name: apibservice
+          value: "apib-svc"
+status: {}

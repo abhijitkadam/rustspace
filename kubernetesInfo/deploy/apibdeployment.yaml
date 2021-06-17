@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: apib
+  name: apib
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apib
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: apib
+    spec:
+      containers:
+      - image: apib:latest
+        name: apib
+        resources: {}
+        imagePullPolicy: Never
+status: {}
