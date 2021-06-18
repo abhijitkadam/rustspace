@@ -57,6 +57,13 @@ Above will deploy both the apis and create services
 To delete run:\
 [./deleteall.sh](./deleteall.sh)
 
+
+use curl to call service apia-svc on your local machine as below. In local kubernetes environment loadbalancer service is avaialble as localhost
+
+> curl http://localhost/info
+
+
+
 Rest of the details are below:
 
 ### Create images
