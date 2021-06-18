@@ -1,9 +1,0 @@
-FROM ubuntu:latest
-RUN apt-get update && apt-get install -y libssl-dev pkg-config
-
-WORKDIR /app
-
-EXPOSE 8081
-
-COPY ../target/release/apia .
-CMD ["./apia"]

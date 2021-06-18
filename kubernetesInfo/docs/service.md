@@ -31,4 +31,4 @@ Name of service as below:
 Another example:
 >kubectl expose deployment apib --port=80 --target-port=8080 --name=apib -o yaml --dry-run=client
 
->kubectl expose deployment apia --port=80 --target-port=8080 --name=apia-svc --type=LoadBalancer -o yaml --dry-run=client > deploy/apiaservice.yaml
+>kubectl expose deployment apia --port=80 --target-port=8081 --name=apia-svc --type=LoadBalancer -o yaml --dry-run=client > deploy/apiaservice.yaml

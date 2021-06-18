@@ -36,20 +36,40 @@ Both the deployments will be be exposed as service
 
 ## Commands
 
-### Create images
-<br/>
-First build the project using:
+First build the project from root workspace folder using below command or release build apia & apib:
 
 > cargo build --release 
 
 Then build container images for apis using following commands. The images will have binaries for api copied from target/release folder. They will be started on continer start. \
 <br/>
 Note that rust env is not in image. We are not building code in image and just copying the binary. So this needs to be build on ubuntu since Docker file also uses Ubuntu for binary compatibility.
-<br/><br/>
 
-> docker build -t apib:latest -f apib/Dockerfile .
+There are 2 scripts file in dir kubernetesInfo:
 
-> docker build -t apia:latest -f apia/Dockerfile .
+>install.sh: to install both deployment and services\
+>deleteall.sh: this will clear both deployments & services
+
+cd kubernetesInfo\
+./install.sh
+
+Above will deploy both the apis and create services
+
+To delete run:\
+./deleteall.sh
+
+Rest of the details are below:
+
+### Create images
+<br/>
+
+<br/>
+Build the images from KubernetesInfo directory
+<br/>
+
+> docker build -t apia:latest -f Dockerfiles/DockerfileApib ../
+
+> docker build -t apib:latest -f Dockerfiles/DockerfileApia ../
+
 
 After this "docker images" should list the created images
 Ideally we will push the containers to central repo so that they are used from there by everyone, however for this demo we will skip that and use locally available images.

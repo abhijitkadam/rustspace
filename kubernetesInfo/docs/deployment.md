@@ -10,9 +10,9 @@ Deployment can be done using command line as well instead of yaml file. So we wi
 https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-deployment-em-
 <br/><br/>
 
-> kubectl create deployment apia --image=apia:latest -o yaml --dry-run=client
-
 > kubectl create deployment apib --image=apib:latest -o yaml --dry-run=client
+
+> kubectl create deployment apia --image=apia:latest -o yaml --dry-run=client
 
 <br/>
 Example with file output 

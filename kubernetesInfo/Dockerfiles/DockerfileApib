@@ -3,5 +3,5 @@ WORKDIR /app
 
 EXPOSE 8080
 
-COPY ../target/release/apib .
+COPY target/release/apib .
 CMD ["./apib"]

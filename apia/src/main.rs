@@ -16,8 +16,12 @@ async fn main() -> tide::Result<()> {
         app_server.ext_service = format!("http://{}/data", service)
     }
 
+    
+   
+
     let mut app = tide::with_state(app_server);
     app.at("/info").get(info);
+    app.at("/check").get(check);
     app.listen("0.0.0.0:8081").await?;
     Ok(())
 }
@@ -25,4 +29,8 @@ async fn main() -> tide::Result<()> {
 async fn info(req: Request<AppServer>) -> tide::Result {
     let res = surf::get(req.state().ext_service.clone()).await?.body_string().await?;
     Ok(format!("Data from source is : {}", res).into())
+}
+
+async fn check(_req: Request<AppServer>) -> tide::Result {    
+    Ok(format!("ok").into())
 }
