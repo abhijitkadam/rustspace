@@ -50,12 +50,12 @@ There are 2 scripts file in dir kubernetesInfo:
 >deleteall.sh: this will clear both deployments & services
 
 cd kubernetesInfo\
-./install.sh
+[./install.sh](./install.sh) 
 
 Above will deploy both the apis and create services
 
 To delete run:\
-./deleteall.sh
+[./deleteall.sh](./deleteall.sh)
 
 Rest of the details are below:
 
