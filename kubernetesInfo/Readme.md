@@ -40,7 +40,7 @@ First build the project from root workspace folder using below command or releas
 
 > cargo build --release 
 
-Then build container images for apis using following commands. The images will have binaries for api copied from target/release folder. They will be started on continer start. \
+The images will have binaries for api copied from target/release folder. They will be started on continer start. \
 <br/>
 Note that rust env is not in image. We are not building code in image and just copying the binary. So this needs to be build on ubuntu since Docker file also uses Ubuntu for binary compatibility.
 
