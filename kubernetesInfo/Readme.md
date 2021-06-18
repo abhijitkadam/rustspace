@@ -1,6 +1,6 @@
 # Kubernetes demo
 
-## About<hr/>
+## About
 This workspace contains 2 apis services that will be used  
 > * apia 
 > * apib 
@@ -27,19 +27,20 @@ The deployments will have multiple replicas of apia as well as apib\
 Both the deployments will be be exposed as service
 
 ## Service
-* All the pods into the apia deployment will be exposed as service and the name of service will be apia-svc
-* All the pods into the apib deployment will be exposed as service and the name of the service will be apib-svc 
+* All the pods into the apia deployment will be exposed as service and the name of service will be apia-svc. This will be load-balancer service since external clients will call it
+* All the pods into the apib deployment will be exposed as service and the name of the service will be apib-svc. This will be Kubernetes internal service type ClusterIP and accesible to the pods inside of kubernetes cluster 
 <br/><br/>
 
 ![Alt text](docs/kunernetesinfo.png?raw=true "Deployment")
+<br/>
 
-## Commands<hr/>
+## Commands
 
 ### Create images
 <br/>
 First build the project using:
 
-cargo build --release 
+> cargo build --release 
 
 Then build container images for apis using following commands. The images will have binaries for api copied from target/release folder. They will be started on continer start. \
 <br/>
