@@ -52,6 +52,7 @@ Note that rust env is not in image. We are not building code in image and just c
 > docker build -t apia:latest -f apia/Dockerfile .
 
 After this "docker images" should list the created images
+Ideally we will push the containers to central repo so that they are used from there by everyone, however for this demo we will skip that and use locally available images.
 
 ### Deployment
 How to create deployment yaml & other help is in [docs/deployment.md](docs/deployment.md) file
