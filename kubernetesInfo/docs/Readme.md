@@ -4,20 +4,21 @@ kubectl -f pod.yaml create
 
 kubectl exec -it pod --sh
 
-----
-k run aoo --image=bash --command -oyaml --dry-run=client > app.yaml -- sh -c 'ping google.com'
+
+k run pod --image=bash --command -oyaml --dry-run=client > app.yaml -- sh -c 'ping google.com'
 
 k -f app.yaml create
 
 k get pod
 
-l logs -f app
+k logs -f app
 
-check logs of container proxy (if there are multiple containers in pod)
-l logs -f app -c proxy
 
---
-force delete pod
+check logs of container proxy (if there are multiple containers in pod):
+k logs -f app -c proxy
+
+
+force delete pod:
 k -f app.yaml delete --force --grace-period 0
 
 
