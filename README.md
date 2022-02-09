@@ -32,6 +32,11 @@ https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
 
 9. To run 
     cargo run -p proj1
+    
+---
+
+* To run specific test and to print the println to console:
+    cargo test test_tantivy_store_query -- --nocapture
 
 
 
